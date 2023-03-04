@@ -1,6 +1,5 @@
-export interface Fruit {
+export interface PurchaseRequest {
     name: string,
-    category: string,
     quantity: number,
     price: number
 }

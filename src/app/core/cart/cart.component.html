@@ -3,10 +3,11 @@
     <div class="cart-container">
         <mat-list>
             <div mat-subheader>Fruits in your Cart</div>
-            <mat-list-item *ngFor="let folder of folders">
-                <mat-icon matRipple matListItemIcon (click)="deleteFromCart()">delete</mat-icon>
-                <div matListItemTitle>{{folder.name}}</div>
-                <div matListItemLine>{{folder.updated | date}}</div>
+            <mat-list-item *ngFor="let item of cart">
+                <mat-icon matRipple matListItemIcon (click)="deleteFromCart(item.name)">delete</mat-icon>
+                <div matListItemTitle>{{item.name}}</div>
+                <div matListItemLine>Quantity: {{item.quantity}}</div>
+                <div matListItemLine>Price: {{item.quantity}}</div>
 
             </mat-list-item>
             <mat-divider></mat-divider>

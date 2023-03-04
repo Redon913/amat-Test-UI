@@ -8,14 +8,16 @@
 
         <form>
             <mat-form-field appearance="outline">
-                <mat-label>Number Of {{fruit.name}} To Be Add</mat-label>
-                <input matInput type="number" ng-model="quantity" placeholder="Number of Apple to card" value="1">
+                <mat-label>Number Of {{fruit.name}} To Add</mat-label>
+                <input #quantity matInput type="number" min="1" placeholder="Number of {{fruit.name}} to card"
+                    value="1">
             </mat-form-field>
         </form>
     </div>
 </div>
 
 <div mat-dialog-actions align="end">
-    <button mat-raised-button color="primary" [mat-dialog-close]="true" (click)="addToCart()">Add</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"
+        (click)="addToCart(fruit.name,quantity.value, fruit.price)">Add</button>
     <button mat-button [mat-dialog-close]="false">Cancel</button>
 </div>

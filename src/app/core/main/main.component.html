@@ -17,7 +17,8 @@
                 <mat-divider></mat-divider>
             </mat-card-content>
             <mat-card-actions>
-                <button [disabled]="fruit.quantity == 0" mat-raised-button color="primary">Buy Now</button>
+                <button [disabled]="fruit.quantity == 0" mat-raised-button color="primary"
+                    (click)="addToCart(fruit.name, '1', fruit.price)">Buy Now</button>
                 <button [disabled]="fruit.quantity == 0" mat-button (click)="addCart(fruit)">Add To Cart</button>
             </mat-card-actions>
         </mat-card>

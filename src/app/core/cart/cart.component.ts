@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
+import { PurchaseRequest } from 'src/app/models/purchaseRequest.model';
+import { CartService } from 'src/app/services/cart.service';
 
-export interface Section {
-  name: string;
-  updated: Date;
-}
 
 @Component({
   selector: 'app-cart',
@@ -12,24 +10,20 @@ export interface Section {
 })
 export class CartComponent {
 
-  totalAmount: number = 450
+  cart!: PurchaseRequest[];
 
-  folders: Section[] = [
-    {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-  ];
+  totalAmount: number = 40;
 
-  deleteFromCart(){
-    console.log('delete clicked');
+  constructor(private cartService: CartService){
+    this.getCart()
+  }
+
+  deleteFromCart(fruitName: string){
+    this.cartService.removeFruit(fruitName);
+    this.getCart()
+  }
+
+  getCart(){
+    this.cart = this.cartService.getCart();
   }
 }

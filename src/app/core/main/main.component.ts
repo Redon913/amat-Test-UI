@@ -3,6 +3,7 @@ import { Fruit } from 'src/app/models/fruit.model';
 import { FruitService } from 'src/app/services/fruit.service';
 import {MatDialog} from '@angular/material/dialog';
 import { AddCartDialogComponent } from '../add-cart-dialog/add-cart-dialog.component';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-main',
@@ -15,7 +16,8 @@ export class MainComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    private fruitService: FruitService
+    private fruitService: FruitService,
+    private cartService: CartService
   ) {}
 
   ngOnInit(){
@@ -28,6 +30,10 @@ export class MainComponent implements OnInit {
       
     })
   }
+
+  addToCart(fruit:string,quantity:string, price: number){
+      this.cartService.addToCart(fruit, parseInt(quantity), price);
+    }
 
   addCart(fruit:Fruit){
     const dialogRef = this.dialog.open(AddCartDialogComponent, {

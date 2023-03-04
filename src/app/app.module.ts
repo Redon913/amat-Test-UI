@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavModule } from './nav/nav.module';
 import { HttpClientModule} from '@angular/common/http';
 import { MatMaterial } from './materials/mat.materials';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

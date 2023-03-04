@@ -10,15 +10,14 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class AddCartDialogComponent {
 
-  @Input() quantity: number = 1;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public fruit: Fruit,
     private cartService : CartService
     ){}
 
-    addToCart(){
-
+    addToCart(fruit:string,quantity:string, price: number){
+      this.cartService.addToCart(fruit, parseInt(quantity), price);
     }
 
 }
