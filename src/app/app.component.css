@@ -1,0 +1,10 @@
+mat-drawer {
+    width: 40vw;
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+mat-drawer-container {
+    height: 100vh;
+}

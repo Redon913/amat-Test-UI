@@ -1,0 +1,10 @@
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #1C6758;
+    color: #EEF2E6;
+    font-family: 'Trispace';
+    text-transform: capitalize;
+
+}

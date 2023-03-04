@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@100;200;300;400;500;600;700;800&display=swap');
+
+.card-warpper {
+    padding: 30px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 20px;
+    padding: 10px;
+    max-width: 300px;
+    min-height: fit-content;
+    border: 2px solid #aaa;
+    border-radius: 10px;
+    box-shadow: 10px 10px 12px -5px rgba(74, 74, 74, 1);
+}
+
+.card>img {
+    max-width: 300px;
+    max-height: 200px;
+    border-radius: 10px;
+}
+
+mat-card-header,
+mat-card-content {
+    font-family: 'Trispace';
+    text-align: justify;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+mat-card-title {
+    font-family: 'Trispace';
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+
+mat-card-actions>button {
+    margin: 0 10px;
+}

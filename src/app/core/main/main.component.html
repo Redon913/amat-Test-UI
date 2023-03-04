@@ -1,0 +1,21 @@
+<div class="card-warpper">
+    <div class="card-container">
+        <mat-card class="card" *ngFor="let fruit of allFruits;index as i;">
+            <mat-card-header>
+                <mat-card-title>{{fruit.Name}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="\assets\img\{{fruit.Name}}.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>
+                    The Best and the juicest {{fruit.Name}} in the world. That came directly from the Farm number {{i +
+                    1}}!!
+                </p>
+                <mat-divider></mat-divider>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary">Buy Now</button>
+                <button mat-button>Add To Cart</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="cart-warp">
+    <h1>Your Shopping Cart</h1>
+    <div class="cart-container">
+        <mat-list>
+            <div mat-subheader>Fruits in your Cart</div>
+            <mat-list-item *ngFor="let folder of folders">
+                <mat-icon matRipple matListItemIcon (click)="deleteFromCart()">delete</mat-icon>
+                <div matListItemTitle>{{folder.name}}</div>
+                <div matListItemLine>{{folder.updated | date}}</div>
+
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </mat-list>
+        <div class="sum">
+            <div class="total"><span>Total: </span><span>{{totalAmount}}$</span></div>
+            <div class="total"><span>18% Tax: </span><span>{{totalAmount * 0.18}}$</span></div>
+            <mat-divider></mat-divider>
+            <div class="total"><span>Grand Total: </span><span>{{totalAmount + totalAmount * 0.18}}$</span></div>
+        </div>
+    </div>
+</div>

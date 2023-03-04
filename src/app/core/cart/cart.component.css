@@ -1,0 +1,36 @@
+.cart-warp,
+.cart-container {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.mat-mdc-list-item-icon {
+    color: rgba(0, 0, 0);
+}
+
+h1 {
+    font-family: 'Trispace';
+}
+
+mat-list>div {
+    font-family: 'Trispace';
+    text-transform: capitalize;
+}
+
+mat-icon:hover {
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.sum {
+    padding: 10px;
+}
+
+.total {
+    display: flex;
+    padding: 5px;
+    font-size: 17px;
+    font-family: 'Trispace';
+    justify-content: space-between;
+}
