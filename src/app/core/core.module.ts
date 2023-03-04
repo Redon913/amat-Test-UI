@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { MainComponent } from './main/main.component';
 import { MatMaterial } from '../materials/mat.materials';
 import { CartComponent } from './cart/cart.component';
+import { AddCartDialogComponent } from './add-cart-dialog/add-cart-dialog.component';
 
 
 
 @NgModule({
   declarations: [
     MainComponent,
-    CartComponent
+    CartComponent,
+    AddCartDialogComponent
   ],
   imports: [
     CommonModule,

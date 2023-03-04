@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Add to Cart</h1>
+<div mat-dialog-content class="content">
+    <img mat-card-image src="\assets\img\{{fruit.name}}.jpg">
+    <div class="detials">
+        <div class="title">{{fruit.name}} <div class="price">Price: {{fruit.price}}$</div>
+        </div>
+        <p>The Best and the juicest {{fruit.name}} in the world. That came directly from the Farm!!</p>
+
+        <form>
+            <mat-form-field appearance="outline">
+                <mat-label>Number Of {{fruit.name}} To Be Add</mat-label>
+                <input matInput type="number" ng-model="quantity" placeholder="Number of Apple to card" value="1">
+            </mat-form-field>
+        </form>
+    </div>
+</div>
+
+<div mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" [mat-dialog-close]="true" (click)="addToCart()">Add</button>
+    <button mat-button [mat-dialog-close]="false">Cancel</button>
+</div>

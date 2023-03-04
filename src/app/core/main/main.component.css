@@ -14,7 +14,7 @@
     padding: 10px;
     max-width: 300px;
     min-height: fit-content;
-    border: 2px solid #aaa;
+    border: 2px solid #656565;
     border-radius: 10px;
     box-shadow: 10px 10px 12px -5px rgba(74, 74, 74, 1);
 }
@@ -23,6 +23,11 @@
     max-width: 300px;
     max-height: 200px;
     border-radius: 10px;
+}
+
+mat-card-content>span {
+    display: flex;
+    justify-content: space-between;
 }
 
 mat-card-header,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddCartDialogComponent } from './core/add-cart-dialog/add-cart-dialog.component';
 import { MainComponent } from './core/main/main.component';
 
 
