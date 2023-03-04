@@ -11,7 +11,6 @@ export class HeaderComponent {
   
   
   cartToggle(){
-    console.log('Cart Clicked');
     this.ToggleCart.emit(null);
   }
 }

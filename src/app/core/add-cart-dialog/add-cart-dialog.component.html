@@ -17,7 +17,7 @@
 </div>
 
 <div mat-dialog-actions align="end">
-    <button mat-raised-button color="primary" [mat-dialog-close]="true"
+    <button mat-raised-button color="primary" [mat-dialog-close]="quantity.value"
         (click)="addToCart(fruit.name,quantity.value, fruit.price)">Add</button>
-    <button mat-button [mat-dialog-close]="false">Cancel</button>
+    <button mat-button [mat-dialog-close]>Cancel</button>
 </div>

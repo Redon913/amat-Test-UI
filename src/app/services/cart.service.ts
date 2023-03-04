@@ -10,10 +10,19 @@ export class CartService {
 
   private fruitCart:PurchaseRequest[] = [];
 
+  
+  
+
   constructor(private dataService: DataService) { }
 
-  checkoutCart(req: PurchaseRequest){
-    return this.dataService.postData(environment.Url + 'checkout', this.fruitCart);
+  checkoutCart(){
+
+    const req: any = {};
+    this.fruitCart.map(rs => {
+      req[rs.name] = rs.quantity;
+    })
+    
+    return this.dataService.postData(environment.Url + 'checkout', req);
   }
 
   addToCart(fruitName: string, quant: number, price: number){
@@ -30,6 +39,10 @@ export class CartService {
 
   removeFruit(fruitName : string) {
     this.fruitCart = this.fruitCart.filter(data => data.name !== fruitName);
+  }
+
+  clearCart(){
+    this.fruitCart = [];
   }
 
   getCart(){

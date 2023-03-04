@@ -11,12 +11,15 @@
 
             </mat-list-item>
             <mat-divider></mat-divider>
+            <!-- <div class="sum">
+                <div class="total"><span>Total: </span><span>{{totalAmount}}$</span></div>
+                <div class="total"><span>18% Tax: </span><span>{{totalAmount * 0.18}}$</span></div>
+                <mat-divider></mat-divider>
+                <div class="total"><span>Grand Total: </span><span>{{totalAmount + totalAmount * 0.18}}$</span></div>
+            </div> -->
         </mat-list>
-        <div class="sum">
-            <div class="total"><span>Total: </span><span>{{totalAmount}}$</span></div>
-            <div class="total"><span>18% Tax: </span><span>{{totalAmount * 0.18}}$</span></div>
-            <mat-divider></mat-divider>
-            <div class="total"><span>Grand Total: </span><span>{{totalAmount + totalAmount * 0.18}}$</span></div>
-        </div>
+
+        <button mat-raised-button color="primary" (click)="checkOutCart()">Check Out Cart</button>
+        <button mat-button (click)="clearCart()">Clear Cart</button>
     </div>
 </div>

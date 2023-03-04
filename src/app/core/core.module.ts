@@ -4,7 +4,7 @@ import { MainComponent } from './main/main.component';
 import { MatMaterial } from '../materials/mat.materials';
 import { CartComponent } from './cart/cart.component';
 import { AddCartDialogComponent } from './add-cart-dialog/add-cart-dialog.component';
-import { FormsModule } from '@angular/forms';
+import { HandlerComponent } from './handler/handler.component';
 
 
 
@@ -12,7 +12,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     MainComponent,
     CartComponent,
-    AddCartDialogComponent
+    AddCartDialogComponent,
+    HandlerComponent
   ],
   imports: [
     CommonModule,
