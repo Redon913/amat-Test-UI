@@ -25,7 +25,6 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.fruitService.getAllFruits().subscribe((data) => {
-      console.log(data);
       if (data.error) {
         this.router.navigate(['/handler'], {
           queryParams: { title: data.error.name, message: data.error.message },

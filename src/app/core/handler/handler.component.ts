@@ -8,10 +8,16 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class HandlerComponent {
   params!: any;
+  buttonText: string = '';
 
   constructor(private Aroute: ActivatedRoute, private router: Router) {
     this.params = this.Aroute.snapshot.queryParams;
-    console.log(this.params.title);
+
+    if (this.params.title == 'Error') {
+      this.buttonText = 'Retry';
+    } else if (this.params.title == 'SecurityError') {
+      this.buttonText = 'Login';
+    }
   }
 
   accept() {

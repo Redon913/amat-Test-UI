@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { PurchaseRequest } from 'src/app/models/purchaseRequest.model';
 import { CartService } from 'src/app/services/cart.service';
@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent {
-  cart!: PurchaseRequest[];
+  cart!: { totalAmount: number; cartData: PurchaseRequest[] };
+
+  @Output() cartButtonClick: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private cartService: CartService,
@@ -20,8 +22,17 @@ export class CartComponent {
     this.getCart();
   }
 
+  cartButtonClicked() {
+    this.cartButtonClick.emit(null);
+  }
+
   deleteFromCart(fruitName: string) {
     this.cartService.removeFruit(fruitName);
+    this.getCart();
+  }
+
+  deleteOneFromCart(fruitName: string) {
+    this.cartService.removeOneFruit(fruitName);
     this.getCart();
   }
 

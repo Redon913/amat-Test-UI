@@ -1,25 +1,37 @@
 <div class="cart-warp">
     <h1>Your Shopping Cart</h1>
+    <h3>Wallet Balance: 10$</h3>
     <div class="cart-container">
         <mat-list>
-            <div mat-subheader>Fruits in your Cart</div>
-            <mat-list-item *ngFor="let item of cart">
-                <mat-icon matRipple matListItemIcon (click)="deleteFromCart(item.name)">delete</mat-icon>
-                <div matListItemTitle>{{item.name}}</div>
-                <div matListItemLine>Quantity: {{item.quantity}}</div>
-                <div matListItemLine>Price: {{item.quantity}}</div>
-
-            </mat-list-item>
+            <div class="header" mat-subheader>Fruits in your Cart</div>
             <mat-divider></mat-divider>
-            <!-- <div class="sum">
-                <div class="total"><span>Total: </span><span>{{totalAmount}}$</span></div>
-                <div class="total"><span>18% Tax: </span><span>{{totalAmount * 0.18}}$</span></div>
+            <div class="item" *ngFor="let item of cart.cartData">
+                <div class="item-details">
+                    <div matListItemTitle class="item-title">{{item.name}}</div>
+                    <div>Quantity: {{item.quantity}}</div>
+                    <div>Price: {{item.price}}$</div>
+                </div>
+                <div class="item-action">
+                    <button mat-icon-button
+                        (click)="deleteOneFromCart(item.name)"><mat-icon>exposure_neg_1</mat-icon></button>
+                    <button mat-icon-button color="warm"
+                        (click)="deleteFromCart(item.name)"><mat-icon>delete</mat-icon></button>
+                </div>
+
+
+            </div>
+            <mat-divider></mat-divider>
+            <div class="sum">
+                <div class="total"><span>Total: </span><span>{{cart.totalAmount}}$</span></div>
+                <div class="total"><span>18% Tax: </span><span>{{(cart.totalAmount * 0.18).toFixed(2)}}$</span></div>
                 <mat-divider></mat-divider>
-                <div class="total"><span>Grand Total: </span><span>{{totalAmount + totalAmount * 0.18}}$</span></div>
-            </div> -->
+                <div class="total"><span>Grand Total: </span><span>{{(cart.totalAmount + cart.totalAmount *
+                        0.18).toFixed(2)}}$</span></div>
+            </div>
         </mat-list>
 
-        <button mat-raised-button color="primary" (click)="checkOutCart()">Check Out Cart</button>
-        <button mat-button (click)="clearCart()">Clear Cart</button>
+        <button mat-raised-button color="primary" (click)="checkOutCart();cartButtonClicked()">Check Out
+            Cart</button>
+        <button mat-button (click)="clearCart();cartButtonClicked()">Clear Cart</button>
     </div>
 </div>
